@@ -38,6 +38,6 @@ func main() {
 	r.HandleFunc("/employees", handler.Employees).Methods("GET")
 
 	http.Handle("/", r)
-	log.Println("Server is running on port 8084")
-	log.Fatal(http.ListenAndServe(":8084", nil))
+	log.Println("Server is running on port 8080")
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
