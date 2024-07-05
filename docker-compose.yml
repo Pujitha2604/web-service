@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: task3-shreeraj
+      MONGO_INITDB_ROOT_PASSWORD: YIXZaFDnEmHXC3PS
+    networks:
+      - employee-network
+
+  employee-service:
+    build: .
+    container_name: employee-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URI: mongodb+srv://task3-shreeraj:YIXZaFDnEmHXC3PS@cluster0.0elhpdy.mongodb.net/yourdbname?retryWrites=true&w=majority&appName=employee-service
+    networks:
+      - employee-network
+
+networks:
+  employee-network:
+    driver: bridge
