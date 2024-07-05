@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export $(grep -v '^#' mongo_credentials.txt | xargs)
 # Ensure the test containers are stopped before starting
 docker-compose down
 
@@ -8,6 +8,7 @@ docker-compose up -d
 
 # Run tests with coverage
 go test ./... -coverprofile=coverage.out
+
 
 # Display coverage
 go tool cover -html=coverage.out -o coverage.html

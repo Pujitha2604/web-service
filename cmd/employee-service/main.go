@@ -5,8 +5,6 @@ import (
 	"employee-service/handlers"
 	"log"
 	"net/http"
-
-	//"os"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -32,7 +30,6 @@ func main() {
 	}
 	defer client.Disconnect(ctx)
 
-	// Assuming handlers are defined in the handlers package
 	handler := handlers.NewEmployeeHandler(client)
 
 	r := mux.NewRouter()
@@ -41,6 +38,6 @@ func main() {
 	r.HandleFunc("/employees", handler.Employees).Methods("GET")
 
 	http.Handle("/", r)
-	log.Println("Server is running on port 8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Println("Server is running on port 8084")
+	log.Fatal(http.ListenAndServe(":8084", nil))
 }

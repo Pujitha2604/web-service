@@ -2,10 +2,9 @@ package tests
 
 import (
 	"context"
-	"encoding/json"
-	// "encoding/json"
 	"employee-service/handlers"
 	"employee-service/models"
+	"encoding/json"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -15,45 +14,23 @@ import (
 	"testing"
 	"time"
 
-	"github.com/docker/go-connections/nat"
 	"github.com/gorilla/mux"
-	"github.com/testcontainers/testcontainers-go"
-	"github.com/testcontainers/testcontainers-go/wait"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"gotest.tools/assert"
 )
 
-var client *mongo.Client
+var globalClient *mongo.Client
 
 func TestMain(m *testing.M) {
-	ctx := context.Background()
-	mongoC, err := testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
-		ContainerRequest: testcontainers.ContainerRequest{
-			Image:        "mongo:latest",
-			ExposedPorts: []string{"27017/tcp"},
-			WaitingFor:   wait.ForListeningPort(nat.Port("27017/tcp")),
-		},
-		Started: true,
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer mongoC.Terminate(ctx)
-
-	ip, err := mongoC.Host(ctx)
-	if err != nil {
-		log.Fatal(err)
+	// Read the MongoDB URI from the environment variable
+	mongoURI := os.Getenv("MONGO_URI")
+	if mongoURI == "" {
+		log.Fatal("MONGO_URI environment variable not set")
 	}
 
-	port, err := mongoC.MappedPort(ctx, "27017")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	mongoURI := "mongodb://" + ip + ":" + port.Port()
-	client, err = mongo.NewClient(options.Client().ApplyURI(mongoURI))
+	client, err := mongo.NewClient(options.Client().ApplyURI(mongoURI))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -65,11 +42,20 @@ func TestMain(m *testing.M) {
 		log.Fatal(err)
 	}
 
-	os.Exit(m.Run())
+	globalClient = client
+
+	code := m.Run()
+
+	err = client.Disconnect(ctx)
+	if err != nil {
+		log.Printf("Failed to disconnect MongoDB client: %v", err)
+	}
+
+	os.Exit(code)
 }
 
 func TestRegisterEmployee(t *testing.T) {
-	handler := handlers.NewEmployeeHandler(client)
+	handler := handlers.NewEmployeeHandler(globalClient)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/register", handler.RegisterEmployee).Methods("POST")
@@ -120,13 +106,13 @@ func TestRegisterEmployee(t *testing.T) {
 }
 
 func TestEmployeeById(t *testing.T) {
-	handler := handlers.NewEmployeeHandler(client)
+	handler := handlers.NewEmployeeHandler(globalClient)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/employee/{id}", handler.EmployeeById).Methods("GET")
 
 	// Insert test employee
-	collection := client.Database("testdb").Collection("employees")
+	collection := globalClient.Database("testdb").Collection("employees")
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 	employee := models.Employee{
@@ -169,7 +155,7 @@ func TestEmployeeById(t *testing.T) {
 }
 
 func TestEmployees(t *testing.T) {
-	handler := handlers.NewEmployeeHandler(client)
+	handler := handlers.NewEmployeeHandler(globalClient)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/employees", handler.Employees).Methods("GET")
@@ -185,7 +171,7 @@ func TestEmployees(t *testing.T) {
 
 	// Test case 2: Simulate failure (e.g., database disconnection)
 	// Disconnect MongoDB client to simulate an internal server error
-	client.Disconnect(context.Background())
+	globalClient.Disconnect(context.Background())
 
 	reqFailure, err := http.NewRequest("GET", "/employees", nil)
 	assert.NilError(t, err)
