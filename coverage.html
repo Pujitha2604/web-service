@@ -57,7 +57,7 @@
 				
 				<option value="file0">employee-service/cmd/employee-service/main.go (0.0%)</option>
 				
-				<option value="file1">employee-service/handlers/employeebyID.go (93.8%)</option>
+				<option value="file1">employee-service/handlers/employeebyID.go (100.0%)</option>
 				
 				<option value="file2">employee-service/handlers/getEmployees.go (84.6%)</option>
 				
@@ -150,7 +150,7 @@ func (h *EmployeeHandler) EmployeeById(w http.ResponseWriter, r *http.Request) <
         if err != nil </span><span class="cov8" title="1">{
                 if err == mongo.ErrNoDocuments </span><span class="cov8" title="1">{
                         http.Error(w, "Employee with this ID doesn't exist", http.StatusNotFound)
-                }</span> else<span class="cov0" title="0"> {
+                }</span> else<span class="cov8" title="1"> {
                         http.Error(w, err.Error(), http.StatusInternalServerError)
                 }</span>
                 <span class="cov8" title="1">return</span>

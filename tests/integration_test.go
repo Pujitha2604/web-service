@@ -105,6 +105,55 @@ func TestRegisterEmployee(t *testing.T) {
 	assert.Equal(t, rrConflictPhone.Code, http.StatusConflict)
 }
 
+// func TestEmployeeById(t *testing.T) {
+// 	handler := handlers.NewEmployeeHandler(globalClient)
+
+// 	r := mux.NewRouter()
+// 	r.HandleFunc("/employee/{id}", handler.EmployeeById).Methods("GET")
+
+// 	// Insert test employee
+// 	collection := globalClient.Database("testdb").Collection("employees")
+// 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+// 	defer cancel()
+// 	employee := models.Employee{
+// 		Name:           "Jane Doe",
+// 		Email:          "jane.doe@example.com",
+// 		Age:            25,
+// 		WorkExperience: 3,
+// 	}
+// 	res, err := collection.InsertOne(ctx, employee)
+// 	assert.NilError(t, err)
+
+// 	id := res.InsertedID.(primitive.ObjectID).Hex()
+
+// 	// Perform valid request
+// 	reqValid, err := http.NewRequest("GET", "/employee/"+id, nil)
+// 	assert.NilError(t, err)
+
+// 	rrValid := httptest.NewRecorder()
+// 	r.ServeHTTP(rrValid, reqValid)
+
+// 	assert.Equal(t, rrValid.Code, http.StatusOK)
+
+// 	// Perform request with invalid ID (expect bad request error)
+// 	reqInvalidID, err := http.NewRequest("GET", "/employee/invalid-id", nil)
+// 	assert.NilError(t, err)
+
+// 	rrInvalidID := httptest.NewRecorder()
+// 	r.ServeHTTP(rrInvalidID, reqInvalidID)
+
+// 	assert.Equal(t, rrInvalidID.Code, http.StatusBadRequest)
+
+// 	// Perform request with non-existent ID (expect not found error)
+// 	reqNonExistentID, err := http.NewRequest("GET", "/employee/123456789012345678901234", nil)
+// 	assert.NilError(t, err)
+
+// 	rrNonExistentID := httptest.NewRecorder()
+// 	r.ServeHTTP(rrNonExistentID, reqNonExistentID)
+
+// 	assert.Equal(t, rrNonExistentID.Code, http.StatusNotFound)
+// }
+
 func TestEmployeeById(t *testing.T) {
 	handler := handlers.NewEmployeeHandler(globalClient)
 
@@ -152,7 +201,31 @@ func TestEmployeeById(t *testing.T) {
 	r.ServeHTTP(rrNonExistentID, reqNonExistentID)
 
 	assert.Equal(t, rrNonExistentID.Code, http.StatusNotFound)
+
+	// Disconnect MongoDB client to simulate an internal server error
+	globalClient.Disconnect(context.Background())
+
+	// Perform request with valid ID to trigger internal server error
+	reqInternalError, err := http.NewRequest("GET", "/employee/"+id, nil)
+	assert.NilError(t, err)
+
+	rrInternalError := httptest.NewRecorder()
+	r.ServeHTTP(rrInternalError, reqInternalError)
+
+	assert.Equal(t, rrInternalError.Code, http.StatusInternalServerError)
+
+	// Reconnect MongoDB client for further tests
+	client, err := mongo.NewClient(options.Client().ApplyURI(os.Getenv("MONGO_URI")))
+	assert.NilError(t, err)
+
+	ctxReconnect, cancelReconnect := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancelReconnect()
+	err = client.Connect(ctxReconnect)
+	assert.NilError(t, err)
+
+	globalClient = client
 }
+
 
 func TestEmployees(t *testing.T) {
 	handler := handlers.NewEmployeeHandler(globalClient)

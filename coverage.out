@@ -1,11 +1,4 @@
 mode: set
-employee-service/cmd/employee-service/main.go:15.13,17.20 2 0
-employee-service/cmd/employee-service/main.go:17.20,19.3 1 0
-employee-service/cmd/employee-service/main.go:21.2,22.16 2 0
-employee-service/cmd/employee-service/main.go:22.16,24.3 1 0
-employee-service/cmd/employee-service/main.go:25.2,28.16 4 0
-employee-service/cmd/employee-service/main.go:28.16,30.3 1 0
-employee-service/cmd/employee-service/main.go:31.2,42.46 9 0
 employee-service/handlers/employeebyID.go:16.80,19.16 3 0
 employee-service/handlers/employeebyID.go:19.16,22.3 2 0
 employee-service/handlers/employeebyID.go:23.2,28.16 6 0
@@ -35,12 +28,19 @@ employee-service/handlers/register.go:52.3,52.9 1 0
 employee-service/handlers/register.go:56.2,58.16 3 0
 employee-service/handlers/register.go:58.16,61.3 2 0
 employee-service/handlers/register.go:63.2,63.30 1 0
+employee-service/cmd/employee-service/main.go:15.13,17.20 2 0
+employee-service/cmd/employee-service/main.go:17.20,19.3 1 0
+employee-service/cmd/employee-service/main.go:21.2,22.16 2 0
+employee-service/cmd/employee-service/main.go:22.16,24.3 1 0
+employee-service/cmd/employee-service/main.go:25.2,28.16 4 0
+employee-service/cmd/employee-service/main.go:28.16,30.3 1 0
+employee-service/cmd/employee-service/main.go:31.2,42.46 9 0
 employee-service/handlers/employeebyID.go:16.80,19.16 3 1
 employee-service/handlers/employeebyID.go:19.16,22.3 2 1
 employee-service/handlers/employeebyID.go:23.2,28.16 6 1
 employee-service/handlers/employeebyID.go:28.16,29.34 1 1
 employee-service/handlers/employeebyID.go:29.34,31.4 1 1
-employee-service/handlers/employeebyID.go:31.9,33.4 1 0
+employee-service/handlers/employeebyID.go:31.9,33.4 1 1
 employee-service/handlers/employeebyID.go:34.3,34.9 1 1
 employee-service/handlers/employeebyID.go:36.2,36.37 1 1
 employee-service/handlers/getEmployees.go:13.77,18.16 5 1
