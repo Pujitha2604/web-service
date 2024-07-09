@@ -1,0 +1,597 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "a4fe0c5b-2cdd-44ac-bd7a-2f901d936aa5"
+    },
+    "item": [
+      {
+        "id": "7661f14f-b13c-4403-8096-8a02ba035828",
+        "name": "RegisterEmployee",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "register"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"name\": \"sai pujidsstha\",\r\n    \"email\": \"saitfdfdsha@example.com\",\r\n    \"age\": 22,\r\n    \"phone_number\":\"65000210\",\r\n    \"work_experience\": 6\r\n}\r\n",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": []
+      },
+      {
+        "id": "50c388f1-ed3f-4e90-9401-cbfe9bca904c",
+        "name": "EmployeeById",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "employee",
+              "6687b5635181f93273da46f1"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "GET"
+        },
+        "response": [],
+        "event": []
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "a4fe0c5b-2cdd-44ac-bd7a-2f901d936aa5",
+      "name": "Employee APIs",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "description": {
+        "content": "Collection to test Employee APIs",
+        "type": "text/plain"
+      }
+    }
+  },
+  "environment": {
+    "id": "6df3e8a5-0047-4316-adf9-05ad73118188",
+    "values": []
+  },
+  "globals": {
+    "id": "10637230-a233-4d97-bf57-e08c2c47f7e4",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 67,
+      "responseMin": 38,
+      "responseMax": 96,
+      "responseSd": 29,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1720517617815,
+      "completed": 1720517618100
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 2,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "402cbb6a-2418-4d9f-87e6-0665a457386d",
+          "httpRequestId": "813031f7-01e3-439a-87f9-80806bbe97af"
+        },
+        "item": {
+          "id": "7661f14f-b13c-4403-8096-8a02ba035828",
+          "name": "RegisterEmployee",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "port": "8080",
+              "path": [
+                "register"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"sai pujidsstha\",\r\n    \"email\": \"saitfdfdsha@example.com\",\r\n    \"age\": 22,\r\n    \"phone_number\":\"65000210\",\r\n    \"work_experience\": 6\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "register"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.0",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "699b8c2d-bc1e-4294-b220-09df0fc3c3a3",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "152",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"name\": \"sai pujidsstha\",\r\n    \"email\": \"saitfdfdsha@example.com\",\r\n    \"age\": 22,\r\n    \"phone_number\":\"65000210\",\r\n    \"work_experience\": 6\r\n}\r\n",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "73a2466f-99ac-4228-ad2a-14d97f3dc719",
+          "status": "Conflict",
+          "code": 409,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 09 Jul 2024 09:33:37 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "40"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              69,
+              109,
+              112,
+              108,
+              111,
+              121,
+              101,
+              101,
+              32,
+              119,
+              105,
+              116,
+              104,
+              32,
+              116,
+              104,
+              105,
+              115,
+              32,
+              101,
+              109,
+              97,
+              105,
+              108,
+              32,
+              97,
+              108,
+              114,
+              101,
+              97,
+              100,
+              121,
+              32,
+              101,
+              120,
+              105,
+              115,
+              116,
+              115,
+              10
+            ]
+          },
+          "cookie": [],
+          "responseTime": 96,
+          "responseSize": 40
+        },
+        "id": "7661f14f-b13c-4403-8096-8a02ba035828"
+      },
+      {
+        "cursor": {
+          "ref": "1f12c6af-a356-40bc-91da-3a9191ad6dca",
+          "length": 2,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "89d69720-e570-430c-9559-c44bd8ef5fd2"
+        },
+        "item": {
+          "id": "50c388f1-ed3f-4e90-9401-cbfe9bca904c",
+          "name": "EmployeeById",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "port": "8080",
+              "path": [
+                "employee",
+                "6687b5635181f93273da46f1"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "employee",
+              "6687b5635181f93273da46f1"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.0",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "0480c478-941e-4f0b-9434-6c76f5a0e0e8",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "72e22351-13e4-4671-aaeb-3159e6b93db4",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Tue, 09 Jul 2024 09:33:38 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "145"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              34,
+              54,
+              54,
+              56,
+              55,
+              98,
+              53,
+              54,
+              51,
+              53,
+              49,
+              56,
+              49,
+              102,
+              57,
+              51,
+              50,
+              55,
+              51,
+              100,
+              97,
+              52,
+              54,
+              102,
+              49,
+              34,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              115,
+              97,
+              105,
+              32,
+              112,
+              117,
+              106,
+              105,
+              116,
+              104,
+              97,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              115,
+              97,
+              105,
+              112,
+              117,
+              106,
+              105,
+              116,
+              104,
+              97,
+              64,
+              101,
+              120,
+              97,
+              109,
+              112,
+              108,
+              101,
+              46,
+              99,
+              111,
+              109,
+              34,
+              44,
+              34,
+              97,
+              103,
+              101,
+              34,
+              58,
+              50,
+              50,
+              44,
+              34,
+              119,
+              111,
+              114,
+              107,
+              95,
+              101,
+              120,
+              112,
+              101,
+              114,
+              105,
+              101,
+              110,
+              99,
+              101,
+              34,
+              58,
+              54,
+              44,
+              34,
+              112,
+              104,
+              111,
+              110,
+              101,
+              95,
+              110,
+              117,
+              109,
+              98,
+              101,
+              114,
+              34,
+              58,
+              34,
+              57,
+              56,
+              55,
+              54,
+              53,
+              52,
+              51,
+              50,
+              49,
+              48,
+              34,
+              125,
+              10
+            ]
+          },
+          "cookie": [],
+          "responseTime": 38,
+          "responseSize": 145
+        },
+        "id": "50c388f1-ed3f-4e90-9401-cbfe9bca904c"
+      }
+    ],
+    "transfers": {
+      "responseTotal": 185
+    },
+    "failures": [],
+    "error": null
+  }
+}
