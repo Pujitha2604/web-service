@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"sai pujistha\",\r\n    \"email\": \"saitfdfdsa@example.com\",\r\n    \"age\": 22,\r\n    \"phone_number\":\"6500210\",\r\n    \"work_experience\": 6\r\n}\r\n",
+					"raw": "{\r\n    \"name\": \"sai pujistha\",\r\n    \"email\": \"sadsfsfdsa@example.com\",\r\n    \"age\": 22,\r\n    \"phone_number\":\"65006776210\",\r\n    \"work_experience\": 6\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
