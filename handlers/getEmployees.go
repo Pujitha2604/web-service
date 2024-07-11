@@ -9,7 +9,9 @@ import (
 
 	"go.mongodb.org/mongo-driver/bson"
 )
+
 //@Method:GET
+//@Route:/employees
 func (h *EmployeeHandler) Employees(w http.ResponseWriter, r *http.Request) {
 	collection := h.client.Database("testdb").Collection("employees")
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)

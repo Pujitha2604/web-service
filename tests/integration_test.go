@@ -105,55 +105,6 @@ func TestRegisterEmployee(t *testing.T) {
 	assert.Equal(t, rrConflictPhone.Code, http.StatusConflict)
 }
 
-// func TestEmployeeById(t *testing.T) {
-// 	handler := handlers.NewEmployeeHandler(globalClient)
-
-// 	r := mux.NewRouter()
-// 	r.HandleFunc("/employee/{id}", handler.EmployeeById).Methods("GET")
-
-// 	// Insert test employee
-// 	collection := globalClient.Database("testdb").Collection("employees")
-// 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-// 	defer cancel()
-// 	employee := models.Employee{
-// 		Name:           "Jane Doe",
-// 		Email:          "jane.doe@example.com",
-// 		Age:            25,
-// 		WorkExperience: 3,
-// 	}
-// 	res, err := collection.InsertOne(ctx, employee)
-// 	assert.NilError(t, err)
-
-// 	id := res.InsertedID.(primitive.ObjectID).Hex()
-
-// 	// Perform valid request
-// 	reqValid, err := http.NewRequest("GET", "/employee/"+id, nil)
-// 	assert.NilError(t, err)
-
-// 	rrValid := httptest.NewRecorder()
-// 	r.ServeHTTP(rrValid, reqValid)
-
-// 	assert.Equal(t, rrValid.Code, http.StatusOK)
-
-// 	// Perform request with invalid ID (expect bad request error)
-// 	reqInvalidID, err := http.NewRequest("GET", "/employee/invalid-id", nil)
-// 	assert.NilError(t, err)
-
-// 	rrInvalidID := httptest.NewRecorder()
-// 	r.ServeHTTP(rrInvalidID, reqInvalidID)
-
-// 	assert.Equal(t, rrInvalidID.Code, http.StatusBadRequest)
-
-// 	// Perform request with non-existent ID (expect not found error)
-// 	reqNonExistentID, err := http.NewRequest("GET", "/employee/123456789012345678901234", nil)
-// 	assert.NilError(t, err)
-
-// 	rrNonExistentID := httptest.NewRecorder()
-// 	r.ServeHTTP(rrNonExistentID, reqNonExistentID)
-
-// 	assert.Equal(t, rrNonExistentID.Code, http.StatusNotFound)
-// }
-
 func TestEmployeeById(t *testing.T) {
 	handler := handlers.NewEmployeeHandler(globalClient)
 

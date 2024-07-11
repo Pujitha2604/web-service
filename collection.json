@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"sai pujidsstha\",\r\n    \"email\": \"saitfdfdsha@example.com\",\r\n    \"age\": 22,\r\n    \"phone_number\":\"65000210\",\r\n    \"work_experience\": 6\r\n}\r\n",
+					"raw": "{\r\n    \"name\": \"sai pujistha\",\r\n    \"email\": \"saitfdfdsa@example.com\",\r\n    \"age\": 22,\r\n    \"phone_number\":\"6500210\",\r\n    \"work_experience\": 6\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -36,15 +36,29 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/employee/6687b5635181f93273da46f1",
+					"raw": "http://localhost:8080/employee/6687ca56dba66eb15148adaa",
 					"protocol": "http",
 					"host": ["localhost"],
 					"port": "8080",
-					"path": ["employee", "6687b5635181f93273da46f1"]
+					"path": ["employee", "6687ca56dba66eb15148adaa"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employees",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["employees"]
 				}
 			},
 			"response": []
 		}
-		
 	]
 }
