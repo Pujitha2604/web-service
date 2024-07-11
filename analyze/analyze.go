@@ -113,9 +113,7 @@ func analyzeFileForAPIEndpoints(rootDir string) map[string]Endpoint {
 
 func AnalyzeEndpoints(rootDir string, newmanReportPath string) {
 	allEndpoints := make(map[string]Endpoint)
-
-	handlersDir := filepath.Join(rootDir, "handlers")
-	handlerFiles, err := getAllGoFiles(handlersDir)
+	handlerFiles, err := getAllGoFiles(rootDir)
 	if err != nil {
 		log.Fatalf("Error retrieving handler files: %v", err)
 	}
@@ -247,7 +245,12 @@ func RunNewman(collectionFile string, reportPath string) error {
 }
 
 func main() {
-	rootDir := "C:/Users/Rekanto/Desktop/employee-service"
+	// Check if root directory is provided as command-line argument
+	if len(os.Args) < 2 {
+		log.Fatal("Root directory not provided. Usage: go run main.go <rootDir>")
+	}
+
+	rootDir := os.Args[1]
 	collectionFile := filepath.Join(rootDir, "collection.json")
 	newmanReportPath := "newman-report.json"
 
