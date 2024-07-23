@@ -2,14 +2,12 @@ package main
 
 import (
 	"context"
+	"employee-service/db"
 	"employee-service/handlers"
 	"employee-service/routes"
 	"log"
 	"net/http"
 	"time"
-
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 func main() {
@@ -18,20 +16,13 @@ func main() {
 		log.Fatal("MONGO_URI environment variable is required")
 	}
 
-	client, err := mongo.NewClient(options.Client().ApplyURI(mongoURI))
+	client, err := db.ConnectMongoDB(mongoURI, 10*time.Second)
 	if err != nil {
 		log.Fatal(err)
 	}
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	defer cancel()
-	err = client.Connect(ctx)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer client.Disconnect(ctx)
+	defer db.DisconnectMongoDB(client, context.Background())
 
 	handler := handlers.NewEmployeeHandler(client)
-
 	r := routes.RegisterRoutes(handler)
 
 	http.Handle("/", r)

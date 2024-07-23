@@ -1,4 +1,5 @@
-version: '3'
+version: '3.7'
+ 
 services:
   mongo:
     image: mongo:latest
@@ -7,3 +8,19 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
     ports:
       - "27017:27017"
+    networks:
+      - t3_default
+ 
+  web-service:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - t3_default
+    depends_on:
+      - mongo
+ 
+networks:
+  t3_default:
+    driver: bridge
+ 

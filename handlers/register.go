@@ -20,8 +20,6 @@ func NewEmployeeHandler(client *mongo.Client) *EmployeeHandler {
 	return &EmployeeHandler{client: client}
 }
 
-//@Method:POST
-//@Route:/register
 func (h *EmployeeHandler) RegisterEmployee(w http.ResponseWriter, r *http.Request) {
 	var employee models.Employee
 	if err := json.NewDecoder(r.Body).Decode(&employee); err != nil {
@@ -63,4 +61,5 @@ func (h *EmployeeHandler) RegisterEmployee(w http.ResponseWriter, r *http.Reques
 	}
 
 	w.WriteHeader(http.StatusOK) // Return HTTP 200 OK upon successful registration
+	w.Write([]byte("Employee is Registered\n"))
 }
