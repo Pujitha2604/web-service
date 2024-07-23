@@ -152,7 +152,31 @@ func TestEmployeeById(t *testing.T) {
 	r.ServeHTTP(rrNonExistentID, reqNonExistentID)
 
 	assert.Equal(t, rrNonExistentID.Code, http.StatusNotFound)
+
+	// Disconnect MongoDB client to simulate an internal server error
+	globalClient.Disconnect(context.Background())
+
+	// Perform request with valid ID to trigger internal server error
+	reqInternalError, err := http.NewRequest("GET", "/employee/"+id, nil)
+	assert.NilError(t, err)
+
+	rrInternalError := httptest.NewRecorder()
+	r.ServeHTTP(rrInternalError, reqInternalError)
+
+	assert.Equal(t, rrInternalError.Code, http.StatusInternalServerError)
+
+	// Reconnect MongoDB client for further tests
+	client, err := mongo.NewClient(options.Client().ApplyURI(os.Getenv("MONGO_URI")))
+	assert.NilError(t, err)
+
+	ctxReconnect, cancelReconnect := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancelReconnect()
+	err = client.Connect(ctxReconnect)
+	assert.NilError(t, err)
+
+	globalClient = client
 }
+
 
 func TestEmployees(t *testing.T) {
 	handler := handlers.NewEmployeeHandler(globalClient)

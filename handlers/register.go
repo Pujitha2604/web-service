@@ -61,4 +61,5 @@ func (h *EmployeeHandler) RegisterEmployee(w http.ResponseWriter, r *http.Reques
 	}
 
 	w.WriteHeader(http.StatusOK) // Return HTTP 200 OK upon successful registration
+	w.Write([]byte("Employee is Registered\n"))
 }
