@@ -13,7 +13,7 @@ sleep 5
 # Run Newman with Docker, mounting the Docker socket and files
 docker run --network host \
   --name employee-service \
-  -v $(pwd)/collection:/etc/postman \
+  -v ./collection/:/etc/postman \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -t postman/newman:latest run -r cli,json --reporter-json-export /etc/postman/newman-report.json /etc/postman/collection.json
  
