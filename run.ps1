@@ -11,7 +11,7 @@ docker-compose up -d
 
 # Wait for the web service to start
 Write-Output "Waiting for the web service to start..."
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds 15
 
 # Run Newman with Docker, mounting the Docker socket and files
 docker run --network host `

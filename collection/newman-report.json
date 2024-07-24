@@ -5,7 +5,7 @@
     },
     "item": [
       {
-        "id": "bd684995-5132-4218-9d8d-b2d86220ca66",
+        "id": "ea9007bb-ff41-496a-affb-a34ce988b67e",
         "name": "RegisterEmployee",
         "request": {
           "url": {
@@ -35,7 +35,7 @@
         "event": []
       },
       {
-        "id": "25f57263-e3be-4b38-ae1b-d11e4806ccbf",
+        "id": "af1b065f-e9d7-4633-bc73-f5d907c1bd42",
         "name": "EmployeeById",
         "request": {
           "url": {
@@ -57,7 +57,7 @@
         "event": []
       },
       {
-        "id": "01c897b2-b3f6-4085-b783-0235eb419a44",
+        "id": "16c3db3c-9d5c-41e0-8fb8-ee0f5ef69a55",
         "name": "Employees",
         "request": {
           "url": {
@@ -91,11 +91,11 @@
     }
   },
   "environment": {
-    "id": "ea3fa9c1-ac5f-4b99-9735-6195b2484be8",
+    "id": "e25e3290-e51d-4f2d-b0de-00bd5c191a3a",
     "values": []
   },
   "globals": {
-    "id": "bebd4188-0044-4e04-befd-e378a1d6948b",
+    "id": "e3c7e4c4-64c1-4294-93f6-0946525079e9",
     "values": []
   },
   "run": {
@@ -123,7 +123,7 @@
       "requests": {
         "total": 3,
         "pending": 0,
-        "failed": 3
+        "failed": 0
       },
       "tests": {
         "total": 3,
@@ -147,10 +147,10 @@
       }
     },
     "timings": {
-      "responseAverage": 0,
-      "responseMin": 0,
-      "responseMax": 0,
-      "responseSd": 0,
+      "responseAverage": 186.66666666666666,
+      "responseMin": 45,
+      "responseMax": 467,
+      "responseSd": 198.22938452431538,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -159,8 +159,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1721750107485,
-      "completed": 1721750107560
+      "started": 1721798440390,
+      "completed": 1721798441016
     },
     "executions": [
       {
@@ -173,11 +173,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "e17406c0-f069-435e-99f6-007ab0753f6c",
-          "httpRequestId": "244f0fc1-194b-44af-a206-f0e3f4e975f4"
+          "ref": "c03f5f36-a46a-43d7-967e-4922dff39500",
+          "httpRequestId": "35348691-9bb4-43a1-a062-88b3c515d87f"
         },
         "item": {
-          "id": "bd684995-5132-4218-9d8d-b2d86220ca66",
+          "id": "ea9007bb-ff41-496a-affb-a34ce988b67e",
           "name": "RegisterEmployee",
           "request": {
             "url": {
@@ -242,7 +242,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "71a59d10-5aa9-403c-b5cf-faadbb94983b",
+              "value": "b491629e-7c56-477a-9475-5ad2c1dfd872",
               "system": true
             },
             {
@@ -259,6 +259,11 @@
               "key": "Connection",
               "value": "keep-alive",
               "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "152",
+              "system": true
             }
           ],
           "method": "POST",
@@ -272,26 +277,90 @@
             }
           }
         },
-        "id": "bd684995-5132-4218-9d8d-b2d86220ca66",
-        "requestError": {
-          "errno": -111,
-          "code": "ECONNREFUSED",
-          "syscall": "connect",
-          "address": "127.0.0.1",
-          "port": 8080
-        }
+        "response": {
+          "id": "510bd2ed-ffdd-43e7-ae3a-3a0dc25fc2ff",
+          "status": "Conflict",
+          "code": 409,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 24 Jul 2024 05:20:40 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "40"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              69,
+              109,
+              112,
+              108,
+              111,
+              121,
+              101,
+              101,
+              32,
+              119,
+              105,
+              116,
+              104,
+              32,
+              116,
+              104,
+              105,
+              115,
+              32,
+              101,
+              109,
+              97,
+              105,
+              108,
+              32,
+              97,
+              108,
+              114,
+              101,
+              97,
+              100,
+              121,
+              32,
+              101,
+              120,
+              105,
+              115,
+              116,
+              115,
+              10
+            ]
+          },
+          "cookie": [],
+          "responseTime": 467,
+          "responseSize": 40
+        },
+        "id": "ea9007bb-ff41-496a-affb-a34ce988b67e"
       },
       {
         "cursor": {
-          "ref": "3bb98ed3-6595-4e4e-ab92-1eac89ddb26a",
+          "ref": "8c37a4c3-31d5-4f9e-b9fe-3d909760fb32",
           "length": 3,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "f6095b52-be85-4707-bd04-c143427e7acc"
+          "httpRequestId": "5f37c9dc-f13d-4fbe-bd31-13dacaf4b257"
         },
         "item": {
-          "id": "25f57263-e3be-4b38-ae1b-d11e4806ccbf",
+          "id": "af1b065f-e9d7-4633-bc73-f5d907c1bd42",
           "name": "EmployeeById",
           "request": {
             "url": {
@@ -344,7 +413,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "cbf68417-dcbc-405b-b199-65875f12394c",
+              "value": "cf75d1c7-a4c2-4a9d-932d-878a8a1b321c",
               "system": true
             },
             {
@@ -365,26 +434,86 @@
           ],
           "method": "GET"
         },
-        "id": "25f57263-e3be-4b38-ae1b-d11e4806ccbf",
-        "requestError": {
-          "errno": -111,
-          "code": "ECONNREFUSED",
-          "syscall": "connect",
-          "address": "127.0.0.1",
-          "port": 8080
-        }
+        "response": {
+          "id": "a9d00ec8-ff79-49c8-99f7-8ad34ea6e119",
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 24 Jul 2024 05:20:40 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "36"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              69,
+              109,
+              112,
+              108,
+              111,
+              121,
+              101,
+              101,
+              32,
+              119,
+              105,
+              116,
+              104,
+              32,
+              116,
+              104,
+              105,
+              115,
+              32,
+              73,
+              68,
+              32,
+              100,
+              111,
+              101,
+              115,
+              110,
+              39,
+              116,
+              32,
+              101,
+              120,
+              105,
+              115,
+              116,
+              10
+            ]
+          },
+          "cookie": [],
+          "responseTime": 48,
+          "responseSize": 36
+        },
+        "id": "af1b065f-e9d7-4633-bc73-f5d907c1bd42"
       },
       {
         "cursor": {
-          "ref": "1837d882-c5e8-4af0-8623-4fefbe29a8e8",
+          "ref": "d1b0fc36-b173-4be3-8af5-32f4a9a7a0b5",
           "length": 3,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "8467957b-4876-4ea5-9fa2-a9425216a523"
+          "httpRequestId": "2f8db762-68d9-4c94-9846-5fcccfb65d26"
         },
         "item": {
-          "id": "01c897b2-b3f6-4085-b783-0235eb419a44",
+          "id": "16c3db3c-9d5c-41e0-8fb8-ee0f5ef69a55",
           "name": "Employees",
           "request": {
             "url": {
@@ -435,7 +564,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "148976fc-775b-4db6-86f9-96581adc3552",
+              "value": "a5c92f91-e107-41ca-a6ca-6d1eb55fb4c6",
               "system": true
             },
             {
@@ -456,319 +585,189 @@
           ],
           "method": "GET"
         },
-        "id": "01c897b2-b3f6-4085-b783-0235eb419a44",
-        "requestError": {
-          "errno": -111,
-          "code": "ECONNREFUSED",
-          "syscall": "connect",
-          "address": "127.0.0.1",
-          "port": 8080
-        }
+        "response": {
+          "id": "b30be5bd-4953-434a-981b-fb5789ec5ce0",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 24 Jul 2024 05:20:41 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "149"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              34,
+              54,
+              54,
+              97,
+              48,
+              56,
+              53,
+              97,
+              55,
+              53,
+              53,
+              54,
+              57,
+              100,
+              57,
+              55,
+              52,
+              98,
+              49,
+              55,
+              101,
+              55,
+              48,
+              50,
+              50,
+              34,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              115,
+              97,
+              105,
+              32,
+              112,
+              117,
+              106,
+              105,
+              115,
+              116,
+              104,
+              97,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              115,
+              97,
+              100,
+              115,
+              102,
+              115,
+              102,
+              100,
+              115,
+              97,
+              64,
+              101,
+              120,
+              97,
+              109,
+              112,
+              108,
+              101,
+              46,
+              99,
+              111,
+              109,
+              34,
+              44,
+              34,
+              97,
+              103,
+              101,
+              34,
+              58,
+              50,
+              50,
+              44,
+              34,
+              119,
+              111,
+              114,
+              107,
+              95,
+              101,
+              120,
+              112,
+              101,
+              114,
+              105,
+              101,
+              110,
+              99,
+              101,
+              34,
+              58,
+              54,
+              44,
+              34,
+              112,
+              104,
+              111,
+              110,
+              101,
+              95,
+              110,
+              117,
+              109,
+              98,
+              101,
+              114,
+              34,
+              58,
+              34,
+              54,
+              53,
+              48,
+              48,
+              54,
+              55,
+              55,
+              54,
+              50,
+              49,
+              48,
+              34,
+              125,
+              93,
+              10
+            ]
+          },
+          "cookie": [],
+          "responseTime": 45,
+          "responseSize": 149
+        },
+        "id": "16c3db3c-9d5c-41e0-8fb8-ee0f5ef69a55"
       }
     ],
     "transfers": {
-      "responseTotal": 0
+      "responseTotal": 225
     },
-    "failures": [
-      {
-        "error": {
-          "errno": -111,
-          "code": "ECONNREFUSED",
-          "syscall": "connect",
-          "address": "127.0.0.1",
-          "port": 8080,
-          "name": "Error",
-          "message": "connect ECONNREFUSED 127.0.0.1:8080",
-          "stack": "Error: connect ECONNREFUSED 127.0.0.1:8080\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16)",
-          "checksum": "fe9d6b13d1b992d03a7d56c4a86352c9",
-          "id": "e84ee04f-6d83-49b0-bfc2-6af315473fd1",
-          "timestamp": 1721750107519,
-          "stacktrace": [
-            {
-              "fileName": "node:net",
-              "lineNumber": 1278,
-              "functionName": "TCPConnectWrap.afterConnect [as oncomplete]",
-              "typeName": "TCPConnectWrap",
-              "methodName": "afterConnect [as oncomplete]",
-              "columnNumber": 16,
-              "native": false
-            }
-          ]
-        },
-        "at": "request",
-        "source": {
-          "id": "bd684995-5132-4218-9d8d-b2d86220ca66",
-          "name": "RegisterEmployee",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "port": "8080",
-              "path": [
-                "register"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "system": true
-              },
-              {
-                "key": "User-Agent",
-                "value": "PostmanRuntime/7.39.0",
-                "system": true
-              },
-              {
-                "key": "Accept",
-                "value": "*/*",
-                "system": true
-              },
-              {
-                "key": "Cache-Control",
-                "value": "no-cache",
-                "system": true
-              },
-              {
-                "key": "Postman-Token",
-                "value": "71a59d10-5aa9-403c-b5cf-faadbb94983b",
-                "system": true
-              },
-              {
-                "key": "Host",
-                "value": "localhost:8080",
-                "system": true
-              },
-              {
-                "key": "Accept-Encoding",
-                "value": "gzip, deflate, br",
-                "system": true
-              },
-              {
-                "key": "Connection",
-                "value": "keep-alive",
-                "system": true
-              }
-            ],
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"name\": \"sai pujistha\",\r\n    \"email\": \"sadsfsfdsa@example.com\",\r\n    \"age\": 22,\r\n    \"phone_number\":\"65006776210\",\r\n    \"work_experience\": 6\r\n}\r\n",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [],
-          "event": []
-        },
-        "cursor": {
-          "position": 0,
-          "iteration": 0,
-          "length": 3,
-          "cycles": 1,
-          "empty": false,
-          "eof": false,
-          "bof": true,
-          "cr": false,
-          "ref": "e17406c0-f069-435e-99f6-007ab0753f6c",
-          "httpRequestId": "244f0fc1-194b-44af-a206-f0e3f4e975f4"
-        }
-      },
-      {
-        "error": {
-          "errno": -111,
-          "code": "ECONNREFUSED",
-          "syscall": "connect",
-          "address": "127.0.0.1",
-          "port": 8080,
-          "name": "Error",
-          "message": "connect ECONNREFUSED 127.0.0.1:8080",
-          "stack": "Error: connect ECONNREFUSED 127.0.0.1:8080\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16)",
-          "checksum": "fe9d6b13d1b992d03a7d56c4a86352c9",
-          "id": "41571246-1ff2-4703-85ae-a3a575f684e9",
-          "timestamp": 1721750107539,
-          "stacktrace": [
-            {
-              "fileName": "node:net",
-              "lineNumber": 1278,
-              "functionName": "TCPConnectWrap.afterConnect [as oncomplete]",
-              "typeName": "TCPConnectWrap",
-              "methodName": "afterConnect [as oncomplete]",
-              "columnNumber": 16,
-              "native": false
-            }
-          ]
-        },
-        "at": "request",
-        "source": {
-          "id": "25f57263-e3be-4b38-ae1b-d11e4806ccbf",
-          "name": "EmployeeById",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "port": "8080",
-              "path": [
-                "employee",
-                "669f7e8cd94ab0c91a6ac4a9"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "User-Agent",
-                "value": "PostmanRuntime/7.39.0",
-                "system": true
-              },
-              {
-                "key": "Accept",
-                "value": "*/*",
-                "system": true
-              },
-              {
-                "key": "Cache-Control",
-                "value": "no-cache",
-                "system": true
-              },
-              {
-                "key": "Postman-Token",
-                "value": "cbf68417-dcbc-405b-b199-65875f12394c",
-                "system": true
-              },
-              {
-                "key": "Host",
-                "value": "localhost:8080",
-                "system": true
-              },
-              {
-                "key": "Accept-Encoding",
-                "value": "gzip, deflate, br",
-                "system": true
-              },
-              {
-                "key": "Connection",
-                "value": "keep-alive",
-                "system": true
-              }
-            ],
-            "method": "GET"
-          },
-          "response": [],
-          "event": []
-        },
-        "cursor": {
-          "ref": "3bb98ed3-6595-4e4e-ab92-1eac89ddb26a",
-          "length": 3,
-          "cycles": 1,
-          "position": 1,
-          "iteration": 0,
-          "httpRequestId": "f6095b52-be85-4707-bd04-c143427e7acc"
-        }
-      },
-      {
-        "error": {
-          "errno": -111,
-          "code": "ECONNREFUSED",
-          "syscall": "connect",
-          "address": "127.0.0.1",
-          "port": 8080,
-          "name": "Error",
-          "message": "connect ECONNREFUSED 127.0.0.1:8080",
-          "stack": "Error: connect ECONNREFUSED 127.0.0.1:8080\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16)",
-          "checksum": "fe9d6b13d1b992d03a7d56c4a86352c9",
-          "id": "307ead66-88f0-4d0e-bf5a-a43a04bf5c3c",
-          "timestamp": 1721750107555,
-          "stacktrace": [
-            {
-              "fileName": "node:net",
-              "lineNumber": 1278,
-              "functionName": "TCPConnectWrap.afterConnect [as oncomplete]",
-              "typeName": "TCPConnectWrap",
-              "methodName": "afterConnect [as oncomplete]",
-              "columnNumber": 16,
-              "native": false
-            }
-          ]
-        },
-        "at": "request",
-        "source": {
-          "id": "01c897b2-b3f6-4085-b783-0235eb419a44",
-          "name": "Employees",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "port": "8080",
-              "path": [
-                "employees"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "User-Agent",
-                "value": "PostmanRuntime/7.39.0",
-                "system": true
-              },
-              {
-                "key": "Accept",
-                "value": "*/*",
-                "system": true
-              },
-              {
-                "key": "Cache-Control",
-                "value": "no-cache",
-                "system": true
-              },
-              {
-                "key": "Postman-Token",
-                "value": "148976fc-775b-4db6-86f9-96581adc3552",
-                "system": true
-              },
-              {
-                "key": "Host",
-                "value": "localhost:8080",
-                "system": true
-              },
-              {
-                "key": "Accept-Encoding",
-                "value": "gzip, deflate, br",
-                "system": true
-              },
-              {
-                "key": "Connection",
-                "value": "keep-alive",
-                "system": true
-              }
-            ],
-            "method": "GET"
-          },
-          "response": [],
-          "event": []
-        },
-        "cursor": {
-          "ref": "1837d882-c5e8-4af0-8623-4fefbe29a8e8",
-          "length": 3,
-          "cycles": 1,
-          "position": 2,
-          "iteration": 0,
-          "httpRequestId": "8467957b-4876-4ea5-9fa2-a9425216a523"
-        }
-      }
-    ],
+    "failures": [],
     "error": null
   }
 }
